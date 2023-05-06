@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 import sqlite3
 
@@ -24,7 +25,7 @@ def add_students_submit():
     house = request.args.get('house')
 
     # Store the data in the database
-    conn = sqlite3.connect('students.db')
+    conn = sqlite3.connect('database.db')
     c = conn.cursor()
     c.execute('INSERT INTO students (name, email, roll_no, phone, branch, cgpa, house) VALUES (?, ?, ?, ?, ?, ?, ?)',
               (name, email, roll_no, phone, branch, cgpa, house))
@@ -37,20 +38,3 @@ def add_students_submit():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-@app.route('/view_students')
-def view_students():
-    # Connect to the database
-    conn = sqlite3.connect('students.db')
-    c = conn.cursor()
-
-    # Execute a SELECT statement to retrieve all the rows from the students table
-    c.execute('SELECT * FROM students')
-    rows = c.fetchall()
-
-    # Close the database connection
-    conn.close()
-
-    # Render the rows in an HTML table using the view_students.html template
-    return render_template('view_students.html', rows=rows)
