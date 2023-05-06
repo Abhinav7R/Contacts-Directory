@@ -54,27 +54,6 @@ def update_students():
 def add_students():
     return render_template('add_students.html')
 
-# @app.route('/add_students_submit', methods=['GET'])
-# def add_students_submit():
-#     name = request.args.get('name')
-#     email = request.args.get('email')
-#     roll_no = request.args.get('roll_no')
-#     phone = request.args.get('phone')
-#     branch = request.args.get('branch')
-#     cgpa = request.args.get('cgpa')
-#     house = request.args.get('house')
-
-#     # Store the data in the database
-#     conn = sqlite3.connect('students.db')
-#     c = conn.cursor()
-#     c.execute('INSERT INTO students (name, email, roll_no, phone, branch, cgpa, house) VALUES (?, ?, ?, ?, ?, ?, ?)',
-#               (name, email, roll_no, phone, branch, cgpa, house))
-#     conn.commit()
-#     conn.close()
-
-#     message = f'Successfully added {name} to the database!'
-#     return render_template('add_students.html', message=message)
-
 @app.route('/add_students_submit', methods=['GET'])
 def add_students_submit():
     name = request.args.get('name')
@@ -157,7 +136,7 @@ def generate_student_html():
             window.location.href = '""" + url_for('add_students') + """';
             });
         </script>"""
-    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
+    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html += """<footer>
             Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
             <br>
