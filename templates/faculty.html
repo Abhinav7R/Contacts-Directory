@@ -4,13 +4,12 @@
         <title>
             IIIT Contact Directory
         </title>
-        <link rel="stylesheet" href="../static/feat.css">
-    </head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='feat.css') }}">
+        </head>
     <body class="animated-background">
 
         <header>
-            <a href="index.html"><img height="98px" src="../static/logo.jpeg"></img></a>
-            <h2>International Institute of Information Technology, Hyderabad</h2>
+            <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>            <h2>International Institute of Information Technology, Hyderabad</h2>
         </header>
         <br>
             <button style="float: right; margin-right: 10px;">Add A Faculty</button>
@@ -20,7 +19,7 @@
         <script>
             var button = document.querySelector("button");
             button.addEventListener("click", function (event) {
-              window.location.href = "add_faculty.html";
+              window.location.href = "#add_faculty.html";
             });
         </script>   
         <footer>

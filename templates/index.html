@@ -4,12 +4,12 @@
         <title>
             IIIT Contact Directory
         </title>
-        <link rel="stylesheet" href="../static/feat.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='feat.css') }}">
     </head>
     <body class="animated-background">
 
         <header>
-            <a href="index.html"><img height="98px" src="../static/logo.jpeg"></img></a>
+            <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>
             <h2>International Institute of Information Technology, Hyderabad</h2>
         </header>
         <br>
@@ -46,6 +46,28 @@
             <br>
             Contact us at info@iiit.ac.in
         </footer>
-        <script src="../static/index.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var student = document.querySelector(".Student");
+              student.addEventListener("click", function(event) {
+                window.location.href = "{{ url_for('student') }}";
+              });
+          
+              var faculty = document.querySelector(".Faculty");
+              faculty.addEventListener("click", function(event) {
+                window.location.href = "{{ url_for('faculty') }}";
+              });
+            });
+          
+            const images = document.querySelectorAll('.slideshow-image');
+            let currentIndex = 0;
+          
+            setInterval(() => {
+              images[currentIndex].classList.remove('active');
+              currentIndex = (currentIndex + 1) % images.length;
+              images[currentIndex].classList.add('active');
+            }, 3000);
+          </script>
+          
     </body>
 </html>
