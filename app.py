@@ -2,7 +2,7 @@
 
 import os
 import sqlite3
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -54,6 +54,27 @@ def update_students():
 def add_students():
     return render_template('add_students.html')
 
+# @app.route('/add_students_submit', methods=['GET'])
+# def add_students_submit():
+#     name = request.args.get('name')
+#     email = request.args.get('email')
+#     roll_no = request.args.get('roll_no')
+#     phone = request.args.get('phone')
+#     branch = request.args.get('branch')
+#     cgpa = request.args.get('cgpa')
+#     house = request.args.get('house')
+
+#     # Store the data in the database
+#     conn = sqlite3.connect('students.db')
+#     c = conn.cursor()
+#     c.execute('INSERT INTO students (name, email, roll_no, phone, branch, cgpa, house) VALUES (?, ?, ?, ?, ?, ?, ?)',
+#               (name, email, roll_no, phone, branch, cgpa, house))
+#     conn.commit()
+#     conn.close()
+
+#     message = f'Successfully added {name} to the database!'
+#     return render_template('add_students.html', message=message)
+
 @app.route('/add_students_submit', methods=['GET'])
 def add_students_submit():
     name = request.args.get('name')
@@ -72,9 +93,8 @@ def add_students_submit():
     conn.commit()
     conn.close()
 
-    message = f'Successfully added {name} to the database!'
-    return render_template('add_students.html', message=message)
-
+    # Redirect to the generate_student_html() function
+    return redirect(url_for('generate_student_html'))
 
 @app.route('/view_students')
 def view_students():
@@ -153,7 +173,8 @@ def generate_student_html():
     # Close the database connection
     conn.close()
 
-    return "Student HTML file generated successfully!"
+    # Render the student.html template
+    return render_template('student.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
