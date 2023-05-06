@@ -157,7 +157,7 @@ def generate_student_html():
             window.location.href = '""" + url_for('add_students') + """';
             });
         </script>"""
-    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
+    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html += """<footer>
             Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
             <br>
