@@ -43,7 +43,7 @@ html+="""<script>
           window.location.href = "add_students.html";
         });
     </script>"""
-html+="""<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
+html+="""<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
 html+="""<footer>
         Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
         <br>
