@@ -50,7 +50,7 @@ def student():
 def update_students():
     return render_template('update_students.html')
 
-@app.route('/add_students')
+@app.route('/add_students.html')
 def add_students():
     return render_template('add_students.html')
 
@@ -157,7 +157,7 @@ def generate_student_html():
             window.location.href = '""" + url_for('add_students') + """';
             });
         </script>"""
-    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
+    html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html += """<footer>
             Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
             <br>
