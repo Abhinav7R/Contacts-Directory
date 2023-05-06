@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     student.addEventListener("click", function(event) {
       window.location.href = "student.html";
     });
-
+  
     var faculty = document.querySelector(".Faculty");
     faculty.addEventListener("click", function(event) {
       window.location.href = "faculty.html";
