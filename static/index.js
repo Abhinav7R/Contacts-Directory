@@ -14,3 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = "faculty.html";
     });
   });  
+
+const images = document.querySelectorAll('.slideshow-image');
+let currentIndex = 0;
+
+setInterval(() => {
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add('active');
+}, 3000);

@@ -1,10 +1,94 @@
-footer{
+footer {
     background-color: aqua;
-    font-size: 25;
+    font-size: 25px;
     position: sticky;
+    background: linear-gradient(to bottom right, #b5d9ff, #77aaff);
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0 100%);
+    padding: 40px;
 }
 
-header{
+header {
     background-color: aqua;
-    font-size: 25;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    font-size: 25px;
+}
+
+table {
+    border-spacing: 10px 10px;
+}
+
+a.head {
+    text-decoration: none;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.slideshow-container {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slideshow-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+}
+
+
+.slideshow-image.active {
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    opacity: 1;
+}
+
+.animated-background {
+    background: linear-gradient(to right, rgb(48, 204, 243), rgb(27, 144, 173));
+    background-size: 200% auto;
+    animation: animationName 4s ease infinite;
+}
+
+@keyframes animationName {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+pre{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
