@@ -65,6 +65,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 input[type="email"],
 input[type="number"] {
     width: 100%;
