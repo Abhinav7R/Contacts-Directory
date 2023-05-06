@@ -1,6 +1,5 @@
 footer {
-    background-color: aqua;
-    font-size: 25px;
+    font-size: 20px;
     position: sticky;
     background: linear-gradient(to bottom right, #b5d9ff, #77aaff);
     clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 100%, 0 100%);
@@ -14,13 +13,17 @@ footer {
 }
 
 header {
-    background-color: aqua;
+    background-color: #77aaff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     left: 0;
     right: 0;
+}
+
+h2{
+    padding: 20px;
 }
 
 body{
