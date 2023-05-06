@@ -22,11 +22,11 @@ header {
     right: 0;
 }
 
-h2{
+h2 {
     padding: 20px;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-image: url('../static/bg.gif');
@@ -37,6 +37,12 @@ body{
 
 button {
     font-size: 25px;
+    background-color: #0077b6;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 table {
@@ -85,7 +91,7 @@ a.head {
     opacity: 1;
 }
 
-pre{
+pre {
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     margin: auto;
