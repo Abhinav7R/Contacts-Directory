@@ -4,6 +4,7 @@
         </header><br>
         <button id="search_button" style="float: right; margin-right: 25px">Find A Faculty</button>
         <button id="add_button" style="float: right; margin-right: 25px">Add A Faculty</button>
+        <button id="update_button" style="float: right; margin-right: 25px">Update Faculty Info</button><br><br><br>
         <br>
         <br>
 <h1>Faculty Information</h1><table class="tableee" align="center"><tr>
@@ -13,7 +14,7 @@
             <th>Phone No.</th>
             <th>Major Research Area</th>
             <th>Office Hours</th>
-            <th>Office</th></tr><tr><td>1</td><td>a</td><td>a@a</td><td>1</td><td>a</td><td>1</td><td>a</td></tr><tr><td>2</td><td>abcd</td><td>abcd@iiit</td><td>7207</td><td>BRAIN</td><td>Office Hours</td><td>Office</td></tr><tr><td>3</td><td>NishitaK</td><td>nishita.kannan@outlook.com</td><td>7207824159</td><td>Major Research Area</td><td>Office Hour</td><td>Office</td></tr></table><script>
+            <th>Office</th></tr><tr><td>1</td><td>a</td><td>a@a</td><td>1</td><td>a</td><td>1</td><td>a</td></tr><tr><td>2</td><td>abcd</td><td>abcd@iiit</td><td>7207</td><td>BRAIN</td><td>Office Hours</td><td>Office</td></tr><tr><td>3</td><td>NishitaK</td><td>nishita.kannan@outlook.com</td><td>7207824159</td><td>Major Research Area</td><td>Office Hour</td><td>Office</td></tr><tr><td>4</td><td>ab</td><td>a@ab</td><td>12</td><td>acd</td><td>123</td><td>qwerty</td></tr></table><script>
     var button = document.querySelector("#add_button");
     button.addEventListener("click", function (event) {
         window.location.href = '/add_faculty.html';
@@ -22,6 +23,11 @@
     var button1 = document.querySelector("#search_button");
     button1.addEventListener("click", function (event) {
         window.location.href = '/search_fac.html';
+    });
+
+    var button2 = document.getElementById("#update_button");
+    button2.addEventListener("click", function (event) {
+        window.location.href = '/update_faculty.html';
     });
         </script><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><footer>
             Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.

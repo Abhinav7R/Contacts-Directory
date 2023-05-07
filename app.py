@@ -50,9 +50,13 @@ def faculty():
 def student():
     return render_template('student.html')
 
-@app.route('/update_students')
+@app.route('/update_students.html')
 def update_students():
     return render_template('update_students.html')
+
+@app.route('/update_faculty.html')
+def update_fac():
+    return render_template('update_faculty.html')
 
 @app.route('/add_students.html')
 def add_students():
@@ -191,6 +195,7 @@ def generate_student_html():
     html += """<br>
         <button id="search_button" style="float: right; margin-right: 25px">Find A Student</button>
         <button id="add_button" style="float: right; margin-right: 25px">Add A Student</button>
+        <button id="update_button" style="float: right; margin-right: 25px">Update Student Info</button>
         <br>
         <br>
         <br>\n"""
@@ -211,16 +216,20 @@ def generate_student_html():
         html += "</tr>"
     html += "</table>"
     html += """<script>
-            var button = document.getElementById("add_button");
-            button.addEventListener("click", function (event) {
-                window.location.href = '/add_students.html';
-            });
+        var button = document.getElementById("add_button");
+        button.addEventListener("click", function (event) {
+            window.location.href = '/add_students.html';
+        });
 
-            var button1 = document.getElementById("search_button");
-            button1.addEventListener("click", function (event) {
-                window.location.href = '/search_stud.html';  // Update the href here
-            });
+        var button1 = document.getElementById("search_button");
+        button1.addEventListener("click", function (event) {
+            window.location.href = '/search_stud.html';  // Update the href here
+        });
 
+        var button2 = document.getElementById("update_button");
+        button2.addEventListener("click", function (event) {
+            window.location.href = '/update_students.html';  // Update the href here
+        });
             </script>"""
     html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html += """<footer>
@@ -263,6 +272,7 @@ def generate_faculty_html():
     html+="""<br>
         <button id="search_button" style="float: right; margin-right: 25px">Find A Faculty</button>
         <button id="add_button" style="float: right; margin-right: 25px">Add A Faculty</button>
+        <button id="update_button" style="float: right; margin-right: 25px">Update Faculty Info</button><br><br><br>
         <br>
         <br>\n"""
     html+="""<h1>Faculty Information</h1>"""
@@ -290,6 +300,11 @@ def generate_faculty_html():
     button1.addEventListener("click", function (event) {
         window.location.href = '/search_fac.html';
     });
+
+    var button2 = document.getElementById("#update_button");
+    button2.addEventListener("click", function (event) {
+        window.location.href = '/update_faculty.html';
+    });
         </script>"""
     html+="""<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html+="""<footer>
@@ -310,6 +325,46 @@ def generate_faculty_html():
 
     # Render the faculty.html template
     return render_template('faculty.html')
+
+@app.route('/update_students_submit', methods=['GET'])
+def update_students_submit():
+    initialize_db('students.db')
+    roll_no = request.args.get('roll_no')
+    name = request.args.get('name')
+    email = request.args.get('email')
+    phone = request.args.get('phone')
+
+    # Store the data in the database
+    conn = sqlite3.connect('students.db')
+    c = conn.cursor()
+    c.execute('UPDATE students SET name = ?, email = ?, phone = ? WHERE roll_no = ?',
+                        (name, email, phone, roll_no))
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('generate_student_html'))
+    # return render_template('student.html')
+
+@app.route('/update_faculty_submit', methods=['GET'])
+def update_faculty_submit():
+    initialize_db('faculty.db')
+    
+    name = request.args.get('name')
+    email = request.args.get('email')
+    phone = request.args.get('phone')
+    major_research_area = request.args.get('major_research_area')
+    office_hours = request.args.get('office_hours')
+    office = request.args.get('office')
+
+    # Store the data in the database
+    conn = sqlite3.connect('faculty.db')
+    c = conn.cursor()
+    c.execute('UPDATE faculty SET name = ?, email = ?, phone = ?, major_research_area = ?, office_hours = ?, office = ? WHERE name = ?',
+                        (name, email, phone, major_research_area,office_hours,office,name))
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('generate_faculty_html'))
 
 if __name__ == '__main__':
     app.run(debug=True)

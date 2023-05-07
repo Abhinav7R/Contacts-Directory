@@ -16,21 +16,30 @@
     <br><br><br><br><br><br><br>
     <main>
         <table align="center">
-            <body>                    
+
+            <body>
+                                  
                 <h1>Update Details</h1>
-                <form action="/update_students_submit" method="GET">
+                <form action="/update_faculty_submit" method="GET">
                     
-                    <label for="roll_no">Roll No (This field cannot be modified):</label>
-                    <input type="text" id="roll_no" name="roll_no" required><br>
 
-                    <label for="name">Name:</label>
+                    <label for="name">Name:(This field cannot be changed)</label>
                     <input type="text" id="name" name="name" required><br>
-
+        
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required><br>
-
+                    
                     <label for="phone">Phone:</label>
                     <input type="text" id="phone" name="phone" required><br>
+                    
+                    <label for="major_research_area">Major Research Area:</label>
+                    <input type="text" id="major_research_area" name="major_research_area"><br>
+                    
+                    <label for="office_hours">Office Hours:</label>
+                    <input type="text" id="office_hours" name="office_hours" required><br>
+                    
+                    <label for="office">Office:</label>
+                    <input type="text" id="office" name="office" required><br>
 
                     <input type="submit" value="Update">
                 </form>
