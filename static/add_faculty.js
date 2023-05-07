@@ -1,6 +1,6 @@
 function promptForKey() {
-    var key = prompt("Enter the fac_key key to proceed:");
-    if (key === "aftab_key") {
+    var key = prompt("Enter the appaji key to proceed:");
+    if (key === "appaji_key") {
       // Key is correct, proceed with the next action
       // ...
     } else {

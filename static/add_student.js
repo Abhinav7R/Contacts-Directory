@@ -6,8 +6,7 @@ function promptForKey() {
     } else {
       // Key is incorrect, show an error message
       alert("Invalid key. Please try again.");
-      // Call the promptForKey() function again to prompt the user for input again
-      promptForKey();
+      window.location.href = "/student";
     }
   }
   // Call the promptForKey() function to start the prompt
