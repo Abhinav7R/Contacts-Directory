@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IIIT Contact Directory</title>
+    <link rel="stylesheet" href="../static/add.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>
+        <h2>International Institute of Information Technology, Hyderabad</h2>
+    </header>
+
+    <br><br><br><br><br><br><br>
+    <main>
+        <table align="center">
+            <body>                    
+                <h1>Update Details</h1>
+                <form action="/update_students_submit" method="GET">
+                    
+                    <label for="id">Enter the key (This field cannot be modified):</label>
+                    <input type="password" id="id" name="id" required><br>
+
+                    <br><br>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required><br>
+
+                    <input type="submit" value="Update">
+                </form>
+        </table>
+    </main>
+
+    <br><br><br><br>
+    <br><br><br><br>
+
+    <footer>
+        Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
+        <br>
+        Contact us at info@iiit.ac.in
+    </footer>
+</body>
+
+</html>
