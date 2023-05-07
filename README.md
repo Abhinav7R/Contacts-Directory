@@ -11,6 +11,7 @@ Faculty Database: This button takes you to the faculty information page.
 ```
 The student information page displays details of students, i.e, rollno, phoneno, cgpa, house, branch. This information is available for everyone to view. This page has 3 options:
 ```
+```
 Update student information: Upon clicking this button, it will ask for a key (unique to every student, much like a password). For our website, we have given this as the id in the database. It can be manipulated by a hash function to generate stronger keys or we can have a password field in the database that will be randomly generated. Only when the key is valid, the information of the student (name, phone, and email) can be updated. This, ofcourse, is to prevent misuse of the site to modify data.
 
 Add student: Adding students to the database will only be permitted to the admin office who will have a key (we have the key here as "appaji_key"). On clicking the add student button, a prompt will be displayed which will ask for a key and only when it is correct, it will redirect to the add student page where you can add all the information of a particular student.
