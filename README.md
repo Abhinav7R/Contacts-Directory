@@ -19,8 +19,10 @@ Find a student: This button allows you to search the database based on all the p
 
 The faculty information page displays the details of faculty, such as name, email, phoneno, major research area, office hours, and office. This page also has three buttons that can be clicked on and is very similar to the student:
 
-Update faculty information: When this button is clicked, a prompt asks for a key that all of the faculty have. This page has options of email, phone, major research area, office hours, and office that can be changed.
+Update faculty information: When this button is clicked, a prompt asks for a key that all of the faculty have (which we have here as aftab_key). This page has options of email, phone, major research area, office hours, and office that can be changed.
 
 Add a faculty: When this button is clicked, a prompt asks for a key that we assume only the admin has. The details that can be filled are name, email, phoneno, major research area, office hours, and office.
 
 Find a faculty: This button allows the user to filter based on the fields of name, email, phoneno, major research area, office hours, and office.
+
+The key, cannot be found by trying to inspect the webpage. Again, this is to prevent misuse of the site.
