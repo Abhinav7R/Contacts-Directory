@@ -210,7 +210,9 @@ def generate_student_html():
         <th>House</th></tr>"""
     for row in result:
         html += "<tr>"
-        for col in row:
+        for idx, col in enumerate(row):
+            if idx == 0:
+                continue
             html += "<td>" + str(col) + "</td>"
         html += "</tr>"
     html += "</table>"
