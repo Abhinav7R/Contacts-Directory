@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            IIIT Contact Directory
-        </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='feat.css') }}">
-        </head>
-    <body class="animated-background">
-
-        <header>
-            <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>            <h2>International Institute of Information Technology, Hyderabad</h2>
-        </header>
-        <br>
-            <button style="float: right; margin-right: 10px;">Add A Faculty</button>
+<html><head><title>Faculty Data</title><link rel="stylesheet" href="/static/feat.css"></head><body><header>
+            <a href="/"><img height="98px" src="/static/logo.jpeg"></a>
+            <h2>International Institute of Information Technology, Hyderabad</h2>
+        </header><br>
+        <button style="float: right; margin-right: 25px">Add A Faculty</button>
         <br>
         <br>
-    
-        <script>
+<h1>Faculty Information</h1><table class="tableee" align="center"><tr>
+            <th>Sr no.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+            <th>Major Research Area</th>
+            <th>Office Hours</th>
+            <th>Office</th></tr><tr><td>1</td><td>a</td><td>a@a</td><td>1</td><td>a</td><td>1</td><td>a</td></tr></table><script>
             var button = document.querySelector("button");
             button.addEventListener("click", function (event) {
-            window.location.href = "{{ url_for('add_faculty') }}";
+            window.location.href = '/add_faculty.html';
             });
-        </script>   
-        <footer>
-            Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved. 
+        </script><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><footer>
+            Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
             <br>
             Contact us at info@iiit.ac.in
-        </footer>
-    </body>
-</html>
+        </footer></body></html>

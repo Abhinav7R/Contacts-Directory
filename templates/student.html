@@ -1,10 +1,10 @@
-<html><head><title>Student Data</title><link rel="stylesheet" href="{{ url_for('static', filename='feat.css') }}"></head><body><header>
-    <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>
-        <h2>International Institute of Information Technology, Hyderabad</h2>
-    </header><br>
-    <button style="float: right; margin-right: 25px">Add A Student</button>
-    <br>
-    <br>
+<html><head><title>Student Data</title><link rel="stylesheet" href="/static/feat.css"></head><body><header>
+            <a href="/"><img height="98px" src="/static/logo.jpeg"></a> 
+            <h2>International Institute of Information Technology, Hyderabad</h2>
+        </header><br>
+        <button style="float: right; margin-right: 25px">Add A Student</button>
+        <br>
+        <br>
 <h1>Students Information</h1><table class="tableee" align="center"><tr>
         <th>Sr no.</th>
         <th>Name</th>
@@ -13,15 +13,13 @@
         <th>Phone No.</th>
         <th>Branch</th>
         <th>CGPA</th>
-        <th>House</th></tr><tr><td>1</td><td>Raudhal</td><td>chad@gmail.com</td><td>20331234</td><td>941918099</td><td>CSE</td><td>10.0</td><td>agni</td></tr><tr><td>2</td><td>Nishita</td><td>Nisha@rty</td><td>12009899</td><td>9876544112</td><td>cse</td><td>10.0</td><td>Vayu</td></tr><tr><td>3</td><td>Nishita</td><td>Nisha@rty</td><td>12009899</td><td>9876544112</td><td>cse</td><td>10.0</td><td>Vayu</td></tr><tr><td>4</td><td>Aryan</td><td>Aryan@Kumar</td><td>1277287777</td><td>864567899</td><td>09756789</td><td>0.03</td><td>agni</td></tr><tr><td>5</td><td>Adva</td><td>1ergh@yj</td><td>123</td><td>123</td><td>123</td><td>1.01</td><td>23</td></tr><tr><td>6</td><td>Adva</td><td>1ergh@yj</td><td>123</td><td>123</td><td>123</td><td>1.01</td><td>23/view_students</td></tr><tr><td>7</td><td>Sai Sudn</td><td>su_dhan@gmal</td><td>202210098</td><td>098889</td><td>CSE</td><td>8.87</td><td>Vayu</td></tr><tr><td>8</td><td>Arush</td><td>qwert@asdfgh</td><td>!2345678</td><td>23456789</td><td>Advt</td><td>0.9</td><td>sdfgh</td></tr></table>
-        <script>
+        <th>House</th></tr><tr><td>1</td><td>Nishita</td><td>asc@wr</td><td>None</td><td>8773</td><td>None</td><td>None</td><td>None</td></tr><tr><td>2</td><td>Nisha</td><td>as@thn</td><td>None</td><td>368</td><td>None</td><td>None</td><td>None</td></tr><tr><td>3</td><td>Nishta</td><td>sac@uy</td><td>None</td><td>836</td><td>None</td><td>None</td><td>None</td></tr><tr><td>4</td><td>Nishita</td><td>nishita.kannan@outlook.com</td><td>752</td><td>83</td><td>bw</td><td>1.0</td><td>sdv </td></tr><tr><td>5</td><td>Nishita</td><td>wdv@hadadv</td><td>39933939</td><td>1711717</td><td>cececece</td><td>10.0</td><td>vwvwv</td></tr><tr><td>6</td><td>Nishita</td><td>bef@ebe</td><td>None</td><td>27722</td><td>None</td><td>None</td><td>None</td></tr><tr><td>7</td><td>a</td><td>a@a</td><td>None</td><td>1</td><td>None</td><td>None</td><td>None</td></tr><tr><td>8</td><td>a</td><td>a@a</td><td>None</td><td>1</td><td>None</td><td>None</td><td>None</td></tr></table><script>
             var button = document.querySelector("button");
             button.addEventListener("click", function (event) {
-                window.location.href = "{{ url_for('add_students') }}";
+            window.location.href = '/add_students.html';
             });
-        </script>      
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><footer>
-        Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
-        <br>
-        Contact us at info@iiit.ac.in
-    </footer></body></html>
+        </script><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><footer>
+            Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
+            <br>
+            Contact us at info@iiit.ac.in
+        </footer></body></html>
