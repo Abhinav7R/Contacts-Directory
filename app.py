@@ -62,6 +62,19 @@ def add_students():
 def add_faculty():
     return render_template('add_faculty.html')
 
+@app.route('/search_students', methods=['GET', 'POST'])
+def search_students():
+    if request.method == 'POST':
+        search_term = request.form.get('search_term')
+        conn = sqlite3.connect('students.db')
+        c = conn.cursor()
+        c.execute("SELECT * FROM students WHERE name LIKE ? OR roll_no LIKE ?",
+                  ('%' + search_term + '%', '%' + search_term + '%'))
+        rows = c.fetchall()
+        conn.close()
+        return render_template('view_students.html', rows=rows)
+    return render_template('search_stud.html')
+
 @app.route('/add_students_submit', methods=['GET'])
 def add_students_submit():
     initialize_db('students.db')
@@ -124,7 +137,9 @@ def generate_student_html():
             <h2>International Institute of Information Technology, Hyderabad</h2>
         </header>"""
     html += """<br>
-        <button style="float: right; margin-right: 25px">Add A Student</button>
+        <button id="search_button" style="float: right; margin-right: 25px">Find A Student</button>
+        <button id="add_button" style="float: right; margin-right: 25px">Add A Student</button>
+        <br>
         <br>
         <br>\n"""
     html += """<h1>Students Information</h1>"""
@@ -144,11 +159,17 @@ def generate_student_html():
         html += "</tr>"
     html += "</table>"
     html += """<script>
-            var button = document.querySelector("button");
+            var button = document.getElementById("add_button");
             button.addEventListener("click", function (event) {
-            window.location.href = '""" + url_for('add_students') + """';
+                window.location.href = '/add_students.html';
             });
-        </script>"""
+
+            var button1 = document.getElementById("search_button");
+            button1.addEventListener("click", function (event) {
+                window.location.href = '/search_stud.html';  // Update the href here
+            });
+
+            </script>"""
     html += """<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html += """<footer>
             Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
