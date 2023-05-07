@@ -210,8 +210,8 @@ def generate_student_html():
         <th>House</th></tr>"""
     for row in result:
         html += "<tr>"
-        for idx, col in enumerate(row):
-            if idx == 0:
+        for idx,col in enumerate(row):
+            if idx==0:
                 continue
             html += "<td>" + str(col) + "</td>"
         html += "</tr>"
@@ -330,7 +330,7 @@ def generate_faculty_html():
 @app.route('/update_students_submit', methods=['GET'])
 def update_students_submit():
     initialize_db('students.db')
-    roll_no = request.args.get('roll_no')
+    id = request.args.get('id')
     name = request.args.get('name')
     email = request.args.get('email')
     phone = request.args.get('phone')
@@ -338,8 +338,8 @@ def update_students_submit():
     # Store the data in the database
     conn = sqlite3.connect('students.db')
     c = conn.cursor()
-    c.execute('UPDATE students SET name = ?, email = ?, phone = ? WHERE roll_no = ?',
-                        (name, email, phone, roll_no))
+    c.execute('UPDATE students SET name = ?, email = ?, phone = ? WHERE id = ?',
+                        (name, email, phone, id))
     conn.commit()
     conn.close()
 
