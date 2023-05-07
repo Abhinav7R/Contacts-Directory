@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IIIT Contact Directory</title>
+  <link rel="stylesheet" href="../static/add.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>
+    <h2>International Institute of Information Technology, Hyderabad</h2>
+  </header>
+  <br><br><br><br>
+  <main>
+    <form action="{{ url_for('search_students') }}" method="POST">
+      <label for="select-option">Select an option:</label>
+      <select id="select-option" name="select-option">
+        <option value="option1">Name</option>
+        <option value="option2">Roll No</option>
+        <option value="option3">House</option>
+        <option value="option4">Phone</option>
+        <option value="option5">Branch</option>
+        <option value="option6">CGPA</option>
+      </select>
+      <br><br>
+
+      <label for="Value">Enter:</label>
+      <input type="text" id="Value" name="Value" required><br>
+
+      {% if rows %}
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Roll No.</th>
+          <th>Phone</th>
+          <th>Branch</th>
+          <th>CGPA</th>
+          <th>House</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+      <input type="submit" value="Search">
+    </form>
+  </main>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer>
+    Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
+    <br>
+    Contact us at info@iiit.ac.in
+  </footer>
+
+</body>
+
+</html>

@@ -1,25 +1,139 @@
-<html><head><title>Student Data</title><link rel="stylesheet" href="/static/feat.css"></head><body><header>
-            <a href="/"><img height="98px" src="/static/logo.jpeg"></a> 
-            <h2>International Institute of Information Technology, Hyderabad</h2>
-        </header><br>
-        <button style="float: right; margin-right: 25px">Add A Student</button>
-        <br>
-        <br>
-<h1>Students Information</h1><table class="tableee" align="center"><tr>
-        <th>Sr no.</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Roll No.</th>
-        <th>Phone No.</th>
-        <th>Branch</th>
-        <th>CGPA</th>
-        <th>House</th></tr><tr><td>1</td><td>Nishita</td><td>asc@wr</td><td>None</td><td>8773</td><td>None</td><td>None</td><td>None</td></tr><tr><td>2</td><td>Nisha</td><td>as@thn</td><td>None</td><td>368</td><td>None</td><td>None</td><td>None</td></tr><tr><td>3</td><td>Nishta</td><td>sac@uy</td><td>None</td><td>836</td><td>None</td><td>None</td><td>None</td></tr><tr><td>4</td><td>Nishita</td><td>nishita.kannan@outlook.com</td><td>752</td><td>83</td><td>bw</td><td>1.0</td><td>sdv </td></tr><tr><td>5</td><td>Nishita</td><td>wdv@hadadv</td><td>39933939</td><td>1711717</td><td>cececece</td><td>10.0</td><td>vwvwv</td></tr><tr><td>6</td><td>Nishita</td><td>bef@ebe</td><td>None</td><td>27722</td><td>None</td><td>None</td><td>None</td></tr><tr><td>7</td><td>a</td><td>a@a</td><td>None</td><td>1</td><td>None</td><td>None</td><td>None</td></tr><tr><td>8</td><td>a</td><td>a@a</td><td>None</td><td>1</td><td>None</td><td>None</td><td>None</td></tr></table><script>
-            var button = document.querySelector("button");
-            button.addEventListener("click", function (event) {
+<html>
+
+<head>
+    <title>Student Data</title>
+    <link rel="stylesheet" href="/static/feat.css">
+</head>
+
+<body>
+    <header>
+        <a href="/"><img height="98px" src="/static/logo.jpeg"></a>
+        <h2>International Institute of Information Technology, Hyderabad</h2>
+    </header><br>
+    <button id="search_button" style="float: right; margin-right: 25px">Find A Student</button>
+    <button id="add_button" style="float: right; margin-right: 25px">Add A Student</button>
+    <br>
+    <br>
+    <br>
+    <h1>Students Information</h1>
+    <table class="tableee" align="center">
+        <tr>
+            <th>Sr no.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roll No.</th>
+            <th>Phone No.</th>
+            <th>Branch</th>
+            <th>CGPA</th>
+            <th>House</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nishita</td>
+            <td>asc@wr</td>
+            <td>None</td>
+            <td>8773</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nisha</td>
+            <td>as@thn</td>
+            <td>None</td>
+            <td>368</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Nishta</td>
+            <td>sac@uy</td>
+            <td>None</td>
+            <td>836</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Nishita</td>
+            <td>nishita.kannan@outlook.com</td>
+            <td>752</td>
+            <td>83</td>
+            <td>bw</td>
+            <td>1.0</td>
+            <td>sdv </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Nishita</td>
+            <td>wdv@hadadv</td>
+            <td>39933939</td>
+            <td>1711717</td>
+            <td>cececece</td>
+            <td>10.0</td>
+            <td>vwvwv</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Nishita</td>
+            <td>bef@ebe</td>
+            <td>None</td>
+            <td>27722</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>a</td>
+            <td>a@a</td>
+            <td>None</td>
+            <td>1</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>a</td>
+            <td>a@a</td>
+            <td>None</td>
+            <td>1</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>b</td>
+            <td>b@b</td>
+            <td>2</td>
+            <td>2</td>
+            <td>b</td>
+            <td>2.0</td>
+            <td>b</td>
+        </tr>
+    </table>
+    <script>
+        var button = document.getElementById("add_button");
+        button.addEventListener("click", function (event) {
             window.location.href = '/add_students.html';
-            });
-        </script><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><footer>
-            Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
-            <br>
-            Contact us at info@iiit.ac.in
-        </footer></body></html>
+        });
+
+        var button1 = document.getElementById("search_button");
+        button1.addEventListener("click", function (event) {
+            window.location.href = '/search_stud.html';  // Update the href here
+        });
+    </script><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        Copyright © 2023, International Institute of Information Technology, Hyderabad. All rights reserved.
+        <br>
+        Contact us at info@iiit.ac.in
+    </footer>
+</body>
+
+</html>

@@ -62,18 +62,70 @@ def add_students():
 def add_faculty():
     return render_template('add_faculty.html')
 
-@app.route('/search_students', methods=['GET', 'POST'])
+@app.route('/search_stud.html')
+def search_stud_html():
+    return redirect(url_for('search_students'))
+
+@app.route('/search_fac.html')
+def search_fac_html():
+    return redirect(url_for('search_fac'))
+
+@app.route('/search_stud', methods=['GET', 'POST'])
 def search_students():
     if request.method == 'POST':
-        search_term = request.form.get('search_term')
+        search_option = request.form.get('select-option')
+        search_term = request.form.get('Value')
+
         conn = sqlite3.connect('students.db')
         c = conn.cursor()
-        c.execute("SELECT * FROM students WHERE name LIKE ? OR roll_no LIKE ?",
-                  ('%' + search_term + '%', '%' + search_term + '%'))
+        
+        if search_option == "option1":
+            c.execute("SELECT * FROM students WHERE name LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option2":
+            c.execute("SELECT * FROM students WHERE roll_no LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option3":
+            c.execute("SELECT * FROM students WHERE House LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option4":
+            c.execute("SELECT * FROM students WHERE phone LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option5":
+            c.execute("SELECT * FROM students WHERE branch LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option6":
+            c.execute("SELECT * FROM students WHERE cgpa LIKE ?", ('%' + search_term + '%',))
+            
         rows = c.fetchall()
         conn.close()
-        return render_template('view_students.html', rows=rows)
+
+        return render_template('search_stud.html', rows=rows)
+
     return render_template('search_stud.html')
+
+@app.route('/search_fac', methods=['GET', 'POST'])
+def search_fac():
+    if request.method == 'POST':
+        search_option = request.form.get('select-option')
+        search_term = request.form.get('Value')
+
+        conn = sqlite3.connect('faculty.db')
+        c = conn.cursor()
+        
+        if search_option == "option1":
+            c.execute("SELECT * FROM faculty WHERE name LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option2":
+            c.execute("SELECT * FROM faculty WHERE email LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option3":
+            c.execute("SELECT * FROM faculty WHERE major_research_area LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option4":
+            c.execute("SELECT * FROM faculty WHERE phone LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option5":
+            c.execute("SELECT * FROM faculty WHERE office_hours LIKE ?", ('%' + search_term + '%',))
+        elif search_option == "option6":
+            c.execute("SELECT * FROM faculty WHERE office LIKE ?", ('%' + search_term + '%',))
+            
+        rows = c.fetchall()
+        conn.close()
+
+        return render_template('search_fac.html', rows=rows)
+    return render_template('search_fac.html')
 
 @app.route('/add_students_submit', methods=['GET'])
 def add_students_submit():
@@ -189,6 +241,7 @@ def generate_student_html():
     # Render the student.html template
     return render_template('student.html')
 
+
 @app.route('/generate_faculty_html')
 def generate_faculty_html():
     # Connect to the database
@@ -208,7 +261,8 @@ def generate_faculty_html():
             <h2>International Institute of Information Technology, Hyderabad</h2>
         </header>"""
     html+="""<br>
-        <button style="float: right; margin-right: 25px">Add A Faculty</button>
+        <button id="search_button" style="float: right; margin-right: 25px">Find A Faculty</button>
+        <button id="add_button" style="float: right; margin-right: 25px">Add A Faculty</button>
         <br>
         <br>\n"""
     html+="""<h1>Faculty Information</h1>"""
@@ -227,10 +281,15 @@ def generate_faculty_html():
         html += "</tr>"
     html += "</table>"
     html += """<script>
-            var button = document.querySelector("button");
-            button.addEventListener("click", function (event) {
-            window.location.href = '""" + url_for('add_faculty') + """';
-            });
+        var button = document.querySelector("add_button");
+        button.addEventListener("click", function (event) {
+            window.location.href = '/add_faculty.html';
+        });
+
+        var button1 = document.getElementById("search_button");
+        button1.addEventListener("click", function (event) {
+            window.location.href = '/search_fac.html';  // Update the href here
+        });
         </script>"""
     html+="""<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html+="""<footer>
