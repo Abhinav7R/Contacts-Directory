@@ -201,7 +201,6 @@ def generate_student_html():
         <br>\n"""
     html += """<h1>Students Information</h1>"""
     html += """<table class="tableee" align="center"><tr>
-        <th>Sr no.</th>
         <th>Name</th>
         <th>Email</th>
         <th>Roll No.</th>
