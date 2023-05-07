@@ -281,15 +281,15 @@ def generate_faculty_html():
         html += "</tr>"
     html += "</table>"
     html += """<script>
-        var button = document.querySelector("add_button");
-        button.addEventListener("click", function (event) {
-            window.location.href = '/add_faculty.html';
-        });
+    var button = document.querySelector("#add_button");
+    button.addEventListener("click", function (event) {
+        window.location.href = '/add_faculty.html';
+    });
 
-        var button1 = document.getElementById("search_button");
-        button1.addEventListener("click", function (event) {
-            window.location.href = '/search_fac.html';  // Update the href here
-        });
+    var button1 = document.querySelector("#search_button");
+    button1.addEventListener("click", function (event) {
+        window.location.href = '/search_fac.html';
+    });
         </script>"""
     html+="""<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"""
     html+="""<footer>
