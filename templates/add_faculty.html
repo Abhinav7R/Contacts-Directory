@@ -3,20 +3,20 @@
 
 <head>
   <title>IIIT Contact Directory</title>
-  <link rel="stylesheet" href="../static/add.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='feat.css') }}">
 </head>
 
 <body>
 
   <header>
-    <a href="index.html"><img height="98px" src="../static/logo.jpeg"></img></a>
+    <a href="{{ url_for('index') }}"><img height="98px" src="{{ url_for('static', filename='logo.jpeg') }}"></a>
     <h2>International Institute of Information Technology, Hyderabad</h2>
 </header>
 
   <main>
     <table align="center">
       <body>
-        <h1>Add a Student</h1>
+        <h1>Add a Faculty</h1>
         <form action="/add_students_submit" method="GET">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required><br>

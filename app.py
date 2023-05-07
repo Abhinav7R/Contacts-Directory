@@ -54,6 +54,10 @@ def update_students():
 def add_students():
     return render_template('add_students.html')
 
+@app.route('/add_faculty.html')
+def add_faculty():
+    return render_template('add_faculty.html')
+
 @app.route('/add_students_submit', methods=['GET'])
 def add_students_submit():
     name = request.args.get('name')
